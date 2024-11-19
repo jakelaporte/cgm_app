@@ -6,6 +6,7 @@ Created on Tue Oct 29 14:59:55 2024
 """
 import streamlit as st
 import os
+from io import StringIO
 import numpy as np
 import pandas as pd
 import plotly.express as px
@@ -74,7 +75,7 @@ class Dexcom(object):
     def dexcom_data(self,filename):
         #working_directory = os.getcwd()
         # st.write(working_directory)
-        infile = filename.getvalue()
+        infile = StringIO(filename.getvalue().decode("utf-8"))
         self.header = infile.readline()
         data = {}
         for line in infile:
