@@ -72,9 +72,9 @@ class Dexcom(object):
         
         
     def dexcom_data(self,filename):
-        working_directory = os.getcwd()
+        #working_directory = os.getcwd()
         # st.write(working_directory)
-        infile = open(filename)
+        infile = filename.getvalue()
         self.header = infile.readline()
         data = {}
         for line in infile:
