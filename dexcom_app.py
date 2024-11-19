@@ -5,6 +5,7 @@ Created on Tue Oct 29 14:59:55 2024
 @author: grover.laporte
 """
 import streamlit as st
+import os
 import numpy as np
 import pandas as pd
 import plotly.express as px
@@ -71,7 +72,9 @@ class Dexcom(object):
         
         
     def dexcom_data(self,filename):
-        infile = open(filename)
+        working_directory = os.getcwd()
+        st.write(working_directory)
+        infile = open(working_directory+filename)
         self.header = infile.readline()
         data = {}
         for line in infile:
