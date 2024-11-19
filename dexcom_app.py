@@ -328,6 +328,7 @@ if select == options[0]:
         if dex_data is None:
             uploaded_file = st.file_uploader("Select .csv survey file.",type='csv')
             if uploaded_file is not None:
+                st.write(uploaded_file)
                 dex_data = Dexcom(uploaded_file.name)
                 st.session_state['dex_data'] = dex_data
                 st.write(dex_data.df)
