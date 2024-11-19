@@ -5,5 +5,4 @@ pandas
 seaborn
 plotly
 scikit-learn
-os
 
