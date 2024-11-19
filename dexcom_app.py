@@ -73,8 +73,8 @@ class Dexcom(object):
         
     def dexcom_data(self,filename):
         working_directory = os.getcwd()
-        st.write(working_directory)
-        infile = open(working_directory+'/'+filename)
+        # st.write(working_directory)
+        infile = open(filename)
         self.header = infile.readline()
         data = {}
         for line in infile:
@@ -329,7 +329,7 @@ if select == options[0]:
             uploaded_file = st.file_uploader("Select .csv survey file.",type='csv')
             if uploaded_file is not None:
                 st.write(uploaded_file)
-                dex_data = Dexcom(uploaded_file.name)
+                dex_data = Dexcom(uploaded_file.upload_url)
                 st.session_state['dex_data'] = dex_data
                 st.write(dex_data.df)
         else:
