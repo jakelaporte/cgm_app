@@ -1,0 +1,14 @@
+scipy
+matplotlib
+numpy
+pandas
+seaborn
+plotly
+lmfit
+imageio
+tabulate
+scikit-learn
+yfinance
+latex
+openpyxl
+scikit-digital-health
